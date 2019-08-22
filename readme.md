@@ -1,7 +1,7 @@
 ## Readme
 
--	Analyzed relationships between E-commerce sales data and merchants’ delivery location, naming and pricing by Data Visualization, Word Could and Xgboost Regression respectively, based on JD’s one month sales data
+-	There are some drawbacks of memory management in C++, including wasting time and space, causing memory leak.
 
-- Used OLS regression to research sales data in early, middle and mature phases and created staged marketing strategies for merchants
+-	Hence, there is a memory pool, based on arrays, to avoid memory leak and saving more than 70% time in allocating memory
 
 - 'code' is about how to creat and test the memory pool.
