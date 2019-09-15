@@ -27,13 +27,15 @@ We will detail our design ideas and implementation methods, and test the allocat
 
 First, we record the first and last addresses of the allocated memory, PoolStart and PoolEnd. Each time the Allocator requests memory from the memory pool, it allocates memory by returning the first address and changing the position of the first address. If there is not enough memory, change the tail address after applying for a large amount of memory. For the management of allocated memory, and the secondary utilization of the released memory, we use arrays to implement memory management. Like the folling pitcture shows.
 
-<center>
-<img src ="https://tva1.sinaimg.cn/large/006y8mN6ly1g701l59w8ej314f0pj3zw.jpg" width="50%" height="50%" />
+<center>  
+<img src = "https://tva1.sinaimg.cn/large/006y8mN6ly1g701l59w8ej314f0pj3zw.jpg" width="50%" height="50%" />
 </center>
 
 When the Allocator applies for memory, it calculates how much memory is needed, indexes the location to the current first address, and modifies the first address for allocation. Give priority to the remaining space in the memory pool. If there is enough memory left, the function will call the function to apply for a piece of memory, return the first address and adjust it to the appropriate position. If it is still not enough, reapply a block of memory and then return and adjust the first address.
 
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g701lgrr1lj319b0mpabh.jpg)
+<center>  
+<img src = "https://tva1.sinaimg.cn/large/006y8mN6ly1g701lgrr1lj319b0mpabh.jpg" width="50%" height="50%" />
+</center>
 
 
 ### Result 
@@ -41,7 +43,11 @@ When the Allocator applies for memory, it calculates how much memory is needed, 
 Test both point and int type for 10000 times allocation, and do 10 times tests to get the average result.
 
 Test result on Mac OS. 79% time has been saved.
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g701dpbvlej311k0i40w6.jpg)
+<center>  
+<img src = "https://tva1.sinaimg.cn/large/006y8mN6ly1g701dpbvlej311k0i40w6.jpg" width="50%" height="50%" />
+</center>
 
 Test result on Window. 69% time has been saved.
-![](https://tva1.sinaimg.cn/large/006y8mN6ly1g701faeovuj312g0is41h.jpg)
+<center>  
+<img src = "https://tva1.sinaimg.cn/large/006y8mN6ly1g701faeovuj312g0is41h.jpg" width="50%" height="50%" />
+</center>
