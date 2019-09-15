@@ -34,7 +34,7 @@ First, we record the first and last addresses of the allocated memory, PoolStart
 When the Allocator applies for memory, it calculates how much memory is needed, indexes the location to the current first address, and modifies the first address for allocation. Give priority to the remaining space in the memory pool. If there is enough memory left, the function will call the function to apply for a piece of memory, return the first address and adjust it to the appropriate position. If it is still not enough, reapply a block of memory and then return and adjust the first address.
 
 <center>  
-<img src = "https://tva1.sinaimg.cn/large/006y8mN6ly1g701lgrr1lj319b0mpabh.jpg" width="50%" height="50%" />
+<img src = "https://tva1.sinaimg.cn/large/006y8mN6ly1g701lgrr1lj319b0mpabh.jpg" width="660%" height="66%" />
 </center>
 
 
@@ -44,10 +44,10 @@ Test both point and int type for 10000 times allocation, and do 10 times tests t
 
 Test result on Mac OS. 79% time has been saved.
 <center>  
-<img src = "https://tva1.sinaimg.cn/large/006y8mN6ly1g701dpbvlej311k0i40w6.jpg" width="50%" height="50%" />
+<img src = "https://tva1.sinaimg.cn/large/006y8mN6ly1g701dpbvlej311k0i40w6.jpg" width="66%" height="66%" />
 </center>
 
 Test result on Window. 69% time has been saved.
 <center>  
-<img src = "https://tva1.sinaimg.cn/large/006y8mN6ly1g701faeovuj312g0is41h.jpg" width="50%" height="50%" />
+<img src = "https://tva1.sinaimg.cn/large/006y8mN6ly1g701faeovuj312g0is41h.jpg" width="66%" height="66%" />
 </center>
